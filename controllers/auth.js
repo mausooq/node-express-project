@@ -2,7 +2,7 @@ const asyncHandler = require('express-async-handler')
 //@desc get all contact
 //@route GET api/contact
 // @access public
-exports.getContact =asyncHandlerasync (async(req,res) => {
+exports.getContact =asyncHandler (async(req,res) => {
     res.status(200).send('get all contacts');
 })
 //@desc update new contact
