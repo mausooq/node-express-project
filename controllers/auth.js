@@ -48,3 +48,4 @@ exports.updateContact = asyncHandler (async (req,res) => {
 exports.deleteContact = asyncHandler ( async (req,res) => {
     res.status(200).send(`delete contact for ${req.params.id}`);
 })
+//middleware to handle errors in the controller function    
