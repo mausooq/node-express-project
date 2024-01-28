@@ -40,8 +40,16 @@ exports.getContacts = asyncHandler(async (req,res) => {
 //@route PUT api/contact/:id
 //@access public
 exports.updateContact = asyncHandler (async (req,res) => {
-    res.status(200).send(`update cont(act for ${req.params.id}`);
+    const contact = await Contact.findById(req.params.id);
+    console.log(contact)
+    if (!contact){
+        res.status(404);
+        throw new Error("Contact not found")
+    }
+    const updatedContact = await Contact.findByIdAndUpdate
+     res.status(200).send(`update contact for ${req.params.id}`);
 })
+
 //@desc  delete  contact 
 //@route DELETE api/contact/:id
 //@access public
