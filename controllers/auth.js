@@ -42,7 +42,7 @@ exports.getContacts = asyncHandler(async (req,res) => {
 exports.updateContact = asyncHandler (async (req,res) => {
     const contact = await Contact.findById(req.params.id);
     console.log(contact)
-    if (!contact){
+    if (contact==-1){
         res.status(404);
         throw new Error("Contact not found")
     }
